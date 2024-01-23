@@ -3,4 +3,6 @@ project(FP_402_Demo_Project C)
 
 set(CMAKE_C_STANDARD 17)
 
-add_executable(FP_402_Demo_Project src/main.c)
+add_executable(FP_402_Demo_Project src/main.c src/utils/gotoxy.h)
+
+target_link_libraries(FP_402_Demo_Project ncurses)
