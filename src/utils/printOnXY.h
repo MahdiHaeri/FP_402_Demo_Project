@@ -10,15 +10,29 @@
 
 
 void printOnXY(int x, int y, const char str[]) {
-    int line = 0;
+    int column = 0;
+    int row = 0;
+    int max_x, max_y;
+
+    getmaxyx(stdscr, max_y, max_x); // Get the dimensions of the window
+
     move(y, x); // Corrected the order of parameters
 
     for (int i = 0; i < strlen(str); i++) {
+        if (y + row >= max_y) {
+            break;
+        }
+        if (x + column >= max_x) {
+            continue;
+        }
         if (str[i] == '\n') {
-            line++;
-            move(y + line, x); // Move to the next line
+            row++;
+            move(y + row, x); // Move to the next line
+            column = 0;
         } else {
+            move(y + row, x + column); // Move to the next column
             addch(str[i]);
+            column++;
         }
     }
 
