@@ -1,12 +1,12 @@
 #include <stdio.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <curses.h>
 #include <unistd.h> // for usleep
 #include "utils/printOnXY.h"
 #include "utils/kbhit.h"
 #include "model/Spaceship.h"
 #include <ncurses.h>
+#include <stdbool.h>
 
 int main() {
     initscr(); // Initialize the curses library
@@ -99,8 +99,8 @@ int main() {
         printOnXY(spaceship.x, spaceship.y, spaceship.shape);
         attroff(COLOR_PAIR(1));
         usleep(20000);
-        erase();
-//        clear();
+//        erase();
+        clear();
         box(stdscr, (int)'+', (int)'-');
         refresh();
     }

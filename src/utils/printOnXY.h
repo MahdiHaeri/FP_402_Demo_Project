@@ -6,6 +6,8 @@
 #define FP_402_DEMO_PROJECT_PRINTONXY_H
 
 #include "string.h"
+#include <stdbool.h>
+#include <ncurses.h>
 
 
 void printOnXY(int x, int y, const char str[]) {
