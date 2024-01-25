@@ -3,7 +3,6 @@
 #include <stdlib.h>
 #include <curses.h>
 #include <unistd.h> // for usleep
-#include "utils/gotoxy.h"
 #include "utils/printOnXY.h"
 #include "utils/kbhit.h"
 #include "model/Spaceship.h"
